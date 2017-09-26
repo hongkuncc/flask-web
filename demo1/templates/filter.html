@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>过滤器</title>
+</head>
+<body>
+<img src="{{ avatar|default('https://pic3.zhimg.com/50/v2-eabb16278e6af5b093cfbb1d1ce0a672_xs.jpg') }}"
+     alt="">
+<hr>
+<p>评论数：({{ comments|length }})</p>
+<ur>
+    {% for comment in comments %}
+        <li>
+            <a href="#">{{ comment.user }}</a>
+            <p href="#">{{ comment.content }}</p>
+        </li>
+    {% endfor %}
+
+</ur>
+</body>
+</html>

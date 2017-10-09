@@ -2,6 +2,7 @@
 from flask import Flask
 from flask_sqlalchemy import  SQLAlchemy
 import config
+import MySQLdb
 
 
 app = Flask(__name__)
@@ -22,6 +23,7 @@ def index():
     # article1=Article(title='aaa',content='bbb')
     # db.session.add(article1)
     # db.session.commit()
+
     #查
     #select*from article where title='aaa';
     # article1=Article.query.filter(Article.title=='aaa')

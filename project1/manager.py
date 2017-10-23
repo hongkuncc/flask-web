@@ -3,6 +3,9 @@ from flask_script import Manager
 from flask_migrate import Migrate,MigrateCommand
 from project1 import  app
 from exts import db
+import sys
+sys.path.append(r'c:\User\Administrator\flask-web\project1')
+from models import User
 
 manager=Manager(app)
 

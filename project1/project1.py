@@ -4,6 +4,7 @@ from flask import Flask,render_template
 import  config
 from flask import  request
 from exts import db
+from flask import session
 #from models import User
 
 
@@ -41,6 +42,25 @@ def regist():
         password2 = request.form.get('password2')
 
     user= User.query.filter(User.telephone==telephone).first()
+    if user:
+        return u'两次密码不相等，请核对后再填写'
+    else:
+        user=User(User.telephone==telephone,User.password==password)
+        db.session.add(user)
+        db.session.commit()
+        return redirect(url_for('login'))
+
+@app.route('/logout/')
+def logout():
+    session.clear()
+    return redirect(url_for('login'))
+
+@app.route('/question/')
+def question():
+    if request.method=='GET':
+        return render_template('question.html')
+    else:
+        pass
 
 if __name__ == '__main__':
     app.run()

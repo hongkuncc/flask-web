@@ -8,5 +8,8 @@ body{
    background: #red;
    width: 730px;
    margin: 0 auto;
-   overflow: hidden;uj
+   overflow: hidden;
+}
+.page-title{
+    text-align: center;
 }
